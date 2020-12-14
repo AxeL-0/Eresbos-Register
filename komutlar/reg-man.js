@@ -10,19 +10,19 @@ exports.run = async (client, message, args) => {
     let isim = args[1];
     let yas = parseInt(args[2]);
     let eresbos_tamisim = eayarlar.tag + isim + eayarlar.tırnak + yas
-    let eresbosemb = new Discord.MessageEmbed().setFooter(`❤️ Eresbos`, client.user.avatarURL()).setColor(0x49003e).setTimestamp()
+    let eresbosemb = new Discord.MessageEmbed().setFooter(`AxeL ❤️ İnfinity`, client.user.avatarURL()).setColor(0x49003e).setTimestamp()
     
-    if (!message.member.hasPermission("ADMINISTRATOR") && !message.member.roles.cache.get("ROL_ID")) return message.react("746308515940925441");
+    if (!message.member.hasPermission("ADMINISTRATOR") && !message.member.roles.cache.get("784317110049439786")) return message.react("784317110179594265");
     if (!eresbos) return message.reply(`Kayıt Edilecek Kullanıcıyı Belirtmelisin.`).then(e => e.delete({ timeout : 6000 }));
     if (!isim) return message.reply(`Kullanıcıyı Kayıt Etmem İçin Bir İsim Yazmalısın.`).then(e => e.delete({ timeout: 6000 }));
     if (!yas) return message.reply(`Kullanıcının Kaydını Tamamlamam İçin Yaşını Belirtmelisin.`).then(e => e.delete({ timeout: 6000 }));
 
-    if (eresbos.roles.cache.get("ERKEK_ROL_ID")) return message.channel.send(eresbosemb.setDescription(`Bu Kullanıcı Zaten Kayıtlı Olduğu İçin Tekrar Kayıt Edemem. \nİsim Değiştirmek İçin \`.isim <@ERESBOS/ID> İsim Yaş\` Komutunu Kullanmalısın.`)).then(e => e.delete({ timeout: 6000 })).catch(err => console.error(error));
-    if (eresbos.roles.cache.get("KIZ_ROL_ID")) return message.channel.send(eresbosemb.setDescription(`Bu Kullanıcı Zaten Kayıtlı Olduğu İçin Tekrar Kayıt Edemem. \nİsim Değiştirmek İçin \`.isim <@ERESBOS/ID> İsim Yaş\` Komutunu Kullanmalısın.`)).then(e => e.delete({ timeout: 6000 })).catch(err => console.error(error));
+    if (eresbos.roles.cache.get("784317110049439789")) return message.channel.send(eresbosemb.setDescription(`Bu Kullanıcı Zaten Kayıtlı Olduğu İçin Tekrar Kayıt Edemem. \nİsim Değiştirmek İçin \`.isim <@ERESBOS/ID> İsim Yaş\` Komutunu Kullanmalısın.`)).then(e => e.delete({ timeout: 6000 })).catch(err => console.error(error));
+    if (eresbos.roles.cache.get("784317110049439792")) return message.channel.send(eresbosemb.setDescription(`Bu Kullanıcı Zaten Kayıtlı Olduğu İçin Tekrar Kayıt Edemem. \nİsim Değiştirmek İçin \`.isim <@ERESBOS/ID> İsim Yaş\` Komutunu Kullanmalısın.`)).then(e => e.delete({ timeout: 6000 })).catch(err => console.error(error));
 
     await eresbos.setNickname(eresbos_tamisim, "Register İsim Değiştirme")
-    await eresbos.roles.add(["ERKEK_ROL_ID_1", "ERKEK_ROL_ID_2"])
-    await eresbos.roles.remove("KAYITSIZ_ROL_ID")
+    await eresbos.roles.add(["784317110049439789", "784317110049439788"])
+    await eresbos.roles.remove("784317110049439786")
 
     database.add(`Erkek_${message.author.id}`, 1)
     database.add(`ToplamKayit_${message.author.id}`, 1)
